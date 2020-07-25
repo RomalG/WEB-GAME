@@ -1,0 +1,29 @@
+{
+  "name": "web-game",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RomalG/WEB-GAME.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/RomalG/WEB-GAME/issues"
+  },
+  "homepage": "https://github.com/RomalG/WEB-GAME#readme",
+  "dependencies": {
+    "createjs": "^1.0.1",
+    "easeljs": "^1.0.2"
+  },
+  "devDependencies": {
+    "@types/easeljs": "^1.0.0",
+    "@types/preloadjs": "^0.6.32",
+    "@types/soundjs": "^0.6.28",
+    "@types/tweenjs": "^1.0.1"
+  },
+  "description": ""
+}
