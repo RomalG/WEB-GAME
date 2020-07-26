@@ -5,13 +5,17 @@
             //Global Game Variables
             let canvas = document.getElementById("canvas");
             let stage:createjs.Stage;
-            let helloLabel:objects.label;
-            let clickMeButton:objects.Button;
+
             let assetManager:createjs.LoadQueue;
             let assetManifest:any[];
+            //Store current scene information
+            let currentScene:objects.Scene;
+            let currentState:number;
 
             assetManifest=[
-                {id:"clickMeButton", src:"./Assets/clickMeButton.png"}
+                {id:"startButton", src:"./Assets/startButton.png"},
+                {id:"backButton", src:"./Assets/backButton.png"},
+                {id:"nextButton", src:"./Assets/nextButton.png"}
             ];
 
     function Init() {
@@ -20,8 +24,6 @@
         assetManager.installPlugin(createjs.Sound);
         assetManager.loadManifest(assetManifest)
         assetManager.on("complete", Start, this);
-        //Start();
-        
     }
 
     function Start() {
@@ -32,32 +34,19 @@
 
         createjs.Ticker.framerate=60;
         createjs.Ticker.on("tick",Update);
+        //setup default game states -- State Machine
         Main();
     }
 
     function Update(){
         stage.update();
-        //movement here
-        //helloLabel.rotation += 5;
     }
 
-    function clickMeButtonClicked():void{
-        helloLabel.text="Starting.....";
-        console.log("Start button clicked.....");
-    }
+
 
     function Main(){
         console.log("Game Starts...")
-        //labe instantiation
-        helloLabel=new objects.label("The Burning Stars", "40px", "Consolas", "#000000",320,240, true);
-        //Button instantiation
-        clickMeButton=new objects.Button(assetManager, "clickMeButton", 320, 340)
-        stage.addChild(helloLabel);
-        clickMeButton.regX=150;
-        clickMeButton.regY=100;
-        clickMeButton.on("click", clickMeButtonClicked);
 
-        stage.addChild(clickMeButton);
     }
     window.onload=Init;
 }) ();

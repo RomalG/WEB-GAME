@@ -3,12 +3,15 @@
     //Global Game Variables
     var canvas = document.getElementById("canvas");
     var stage;
-    var helloLabel;
-    var clickMeButton;
     var assetManager;
     var assetManifest;
+    //Store current scene information
+    var currentScene;
+    var currentState;
     assetManifest = [
-        { id: "clickMeButton", src: "./Assets/clickMeButton.png" }
+        { id: "startButton", src: "./Assets/startButton.png" },
+        { id: "backButton", src: "./Assets/backButton.png" },
+        { id: "nextButton", src: "./Assets/nextButton.png" }
     ];
     function Init() {
         console.log("Initializing start");
@@ -16,7 +19,6 @@
         assetManager.installPlugin(createjs.Sound);
         assetManager.loadManifest(assetManifest);
         assetManager.on("complete", Start, this);
-        //Start();
     }
     function Start() {
         console.log("Starting Application....");
@@ -25,28 +27,14 @@
         stage.enableMouseOver(20);
         createjs.Ticker.framerate = 60;
         createjs.Ticker.on("tick", Update);
+        //setup default game states -- State Machine
         Main();
     }
     function Update() {
         stage.update();
-        //movement here
-        //helloLabel.rotation += 5;
-    }
-    function clickMeButtonClicked() {
-        helloLabel.text = "Starting.....";
-        console.log("Start button clicked.....");
     }
     function Main() {
         console.log("Game Starts...");
-        //labe instantiation
-        helloLabel = new objects.label("The Burning Stars", "40px", "Consolas", "#000000", 320, 240, true);
-        //Button instantiation
-        clickMeButton = new objects.Button(assetManager, "clickMeButton", 320, 340);
-        stage.addChild(helloLabel);
-        clickMeButton.regX = 150;
-        clickMeButton.regY = 100;
-        clickMeButton.on("click", clickMeButtonClicked);
-        stage.addChild(clickMeButton);
     }
     window.onload = Init;
 })();

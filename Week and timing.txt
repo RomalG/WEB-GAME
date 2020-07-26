@@ -1,2 +1,2 @@
 Week = Week 5
-Timing = 23:45
+Timing = 01:23.35
