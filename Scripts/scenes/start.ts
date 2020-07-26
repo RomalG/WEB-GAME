@@ -13,7 +13,7 @@ module scenes{
         //methods
         public Start():void{
             //initialize the objects for this scene
-            this.welcomeLabel=new objects.label("Welcom to The Burning Stars!!!!","60px","Consolas","#000000",320,240,true);
+            this.welcomeLabel=new objects.label("Welcome to The Burning Stars!!!!","60px","Consolas","#000000",320,240,true);
             //NOTE : PreloadJS manifest id 
             this.startButton=new objects.Button(this.assetManager,"nextButton",320,300);
             this.Main();
@@ -27,6 +27,7 @@ module scenes{
         }
         public startButtonClick():void{
             //change from Start to game scene
+            objects.Game.currentScene = config.Scene.GAME;
         }
     }
 }
