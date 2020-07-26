@@ -17,10 +17,10 @@ var objects;
         __extends(Button, _super);
         //Variables
         //Constructors
-        function Button(imagepath, x, y) {
+        function Button(assetManager, imageString, x, y) {
             if (x === void 0) { x = 0; }
             if (y === void 0) { y = 0; }
-            var _this = _super.call(this, imagepath) || this;
+            var _this = _super.call(this, assetManager.getResult(imageString)) || this;
             //Default position
             _this.x = x;
             _this.y = y;

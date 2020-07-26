@@ -2,8 +2,8 @@ module objects{
     export class Button extends createjs.Bitmap{
         //Variables
         //Constructors
-        constructor(imagepath:string, x:number=0, y:number=0){
-            super(imagepath);
+        constructor(assetManager:createjs.LoadQueue, imageString:string, x:number=0, y:number=0){
+            super(assetManager.getResult(imageString));
             //Default position
             this.x=x;
             this.y=y;

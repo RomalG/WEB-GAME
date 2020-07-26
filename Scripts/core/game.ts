@@ -7,10 +7,20 @@
             let stage:createjs.Stage;
             let helloLabel:objects.label;
             let clickMeButton:objects.Button;
+            let assetManager:createjs.LoadQueue;
+            let assetManifest:any[];
+
+            assetManifest=[
+                {id:"clickMeButton", src:"./Assets/clickMeButton.png"}
+            ];
 
     function Init() {
         console.log("Initializing start");
-        Start();
+        assetManager=new createjs.LoadQueue();
+        assetManager.installPlugin(createjs.Sound);
+        assetManager.loadManifest(assetManifest)
+        assetManager.on("complete", Start, this);
+        //Start();
         
     }
 
@@ -31,15 +41,21 @@
         //helloLabel.rotation += 5;
     }
 
+    function clickMeButtonClicked():void{
+        helloLabel.text="Starting.....";
+        console.log("Start button clicked.....");
+    }
+
     function Main(){
         console.log("Game Starts...")
         //labe instantiation
-        helloLabel=new objects.label("Hello World", "40px", "Consolas", "#000000",320,240, true);
+        helloLabel=new objects.label("The Burning Stars", "40px", "Consolas", "#000000",320,240, true);
         //Button instantiation
-        clickMeButton=new objects.Button("./Assets/clickMeButton.png", 320, 340)
+        clickMeButton=new objects.Button(assetManager, "clickMeButton", 320, 340)
         stage.addChild(helloLabel);
         clickMeButton.regX=150;
         clickMeButton.regY=100;
+        clickMeButton.on("click", clickMeButtonClicked);
 
         stage.addChild(clickMeButton);
     }
