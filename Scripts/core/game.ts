@@ -16,7 +16,7 @@
                 {id:"startButton", src:"./Assets/startButton.png"},
                 {id:"backButton", src:"./Assets/backButton.png"},
                 {id:"nextButton", src:"./Assets/nextButton.png"},
-                {id:"background", src:"./Assets/background.png"}
+                {id:"background", src:"./Assets/background.jpg"}
             ];
 
     function Init() {

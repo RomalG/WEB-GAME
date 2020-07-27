@@ -5,4 +5,3 @@ Timing = 00:20:00
 lite-server
 
 Game design document Week 6
-Background week 6 till----00:37:47

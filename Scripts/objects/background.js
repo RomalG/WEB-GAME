@@ -18,7 +18,7 @@ var objects;
         //Variables
         //constructor
         function Background(assetManager) {
-            var _this = _super.call(this, assetManager.getResult("Background")) || this;
+            var _this = _super.call(this, assetManager.getResult("background")) || this;
             console.log("Creating the background........");
             _this.Start();
             return _this;
