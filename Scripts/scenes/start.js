@@ -24,7 +24,8 @@ var scenes;
         //methods
         StartScene.prototype.Start = function () {
             //initialize the objects for this scene
-            this.welcomeLabel = new objects.label("Welcome to The Burning Stars!!!!", "60px", "Consolas", "#000000", 320, 240, true);
+            this.background = new objects.Background(this.assetManager);
+            this.welcomeLabel = new objects.label("The Burning Stars!!!!", "60px", "Consolas", "#000000", 320, 240, true);
             //NOTE : PreloadJS manifest id 
             this.startButton = new objects.Button(this.assetManager, "nextButton", 320, 300);
             this.Main();
@@ -32,6 +33,7 @@ var scenes;
         StartScene.prototype.Update = function () { };
         StartScene.prototype.Main = function () {
             //Add items to  the scene
+            this.addChild(this.background);
             this.addChild(this.welcomeLabel);
             this.addChild(this.startButton);
             this.startButton.on("click", this.startButtonClick);
