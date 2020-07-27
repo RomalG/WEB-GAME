@@ -1,5 +1,7 @@
-Week = Week 5
-Timing = 01:45:38
+Week = Week 6
+Timing = 00:20:00
 
 
 lite-server
+
+Game design document Week 6
