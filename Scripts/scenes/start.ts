@@ -15,9 +15,9 @@ module scenes{
         public Start():void{
             //initialize the objects for this scene
             this.background=new objects.Background(this.assetManager);
-            this.welcomeLabel=new objects.label("The Burning Stars!!!!","60px","Consolas","#000000",320,240,true);
+            this.welcomeLabel=new objects.label("The Burning Stars","60px","Consolas","#FFFFFF",950,240,true);
             //NOTE : PreloadJS manifest id 
-            this.startButton=new objects.Button(this.assetManager,"nextButton",320,300);
+            this.startButton=new objects.Button(this.assetManager,"nextButton",700,300);
             this.Main();
         }
 
