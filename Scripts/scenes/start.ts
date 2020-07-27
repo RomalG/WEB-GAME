@@ -21,7 +21,9 @@ module scenes{
             this.Main();
         }
 
-        public Update():void{}
+        public Update():void{
+            //this.background.Update();
+        }
 
         public Main():void{
             //Add items to  the scene

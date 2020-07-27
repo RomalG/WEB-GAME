@@ -1,7 +1,7 @@
 module objects{
     export class Background extends createjs.Bitmap{
         //Variables
-
+        private speedY:number=5;
         //constructor
         constructor(assetManager:createjs.LoadQueue)
         {
@@ -10,12 +10,26 @@ module objects{
             this.Start();
         }
         //Functions
-        public Start():void{}
-        public Update():void{}
-        public Reset():void{}
-        public Move():void{}
+        public Start():void{
+            this.Reset();
+        }
+        public Update():void{
+            this.Move();
+            this.CheckBound();
+        }
+        public Reset():void{
+            //Reset my background Y position
+            console.log("RESET!");
+        }
+        public Move():void{
+            this.y+=this.speedY;
+        }
 
         //Collision Detection
-        public CheckBound():void{}
+        public CheckBound():void{
+            if(this.y>=0){
+                this.Reset();
+            }
+        }
     }
 }

@@ -30,7 +30,9 @@ var scenes;
             this.startButton = new objects.Button(this.assetManager, "nextButton", 700, 300);
             this.Main();
         };
-        StartScene.prototype.Update = function () { };
+        StartScene.prototype.Update = function () {
+            //this.background.Update();
+        };
         StartScene.prototype.Main = function () {
             //Add items to  the scene
             this.addChild(this.background);
