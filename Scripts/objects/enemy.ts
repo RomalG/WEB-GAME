@@ -15,8 +15,8 @@ module objects{
             this.CheckBound();
         }
         public Reset():void{
-            this.y=Math.floor(Math.random() * 740) + 50;
-            this.x=Math.floor(Math.random() * 5) - 60;
+            this.y=Math.floor(Math.random() * 750) + 60;
+            this.x=Math.floor(Math.random() * 640) - 500;
         }
         public Move():void{
             this.x+=5;
