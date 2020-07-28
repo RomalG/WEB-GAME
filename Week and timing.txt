@@ -1,7 +1,8 @@
-Week = week 6 -----***finished***----
+Week = week 8
 Timing = 00:20:00
 
 
 lite-server
 
 Game design document Week 6
+resize player image === script -> objects -> player
