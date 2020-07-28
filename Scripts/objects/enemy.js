@@ -35,7 +35,7 @@ var objects;
             //empty...for now
         };
         Enemy.prototype.Move = function () {
-            this.x += 0.1;
+            this.x += 5;
         };
         Enemy.prototype.CheckBound = function () {
             //Empty.....for now

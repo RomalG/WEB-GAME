@@ -19,7 +19,7 @@ module objects{
             //empty...for now
         }
         public Move():void{
-            this.x+=0.1
+            this.x+=5;
         }
         public CheckBound():void{
             //Empty.....for now

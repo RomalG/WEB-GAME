@@ -9,9 +9,6 @@ module objects{
         public Start():void{
             this.x=820;
             this.y=800;
-            //resizing spaceship
-            this.scaleX=0.50;
-            this.scaleY=0.50;
         }
         public Update():void{
             this.Move();
@@ -25,6 +22,22 @@ module objects{
             //Keyboard controls
 
         }
-        public CheckBound():void{}
+        public CheckBound():void{
+            //sides
+            if (this.y >= 880 - this.halfW){
+                //collided with boundary
+                this.y= 880 - this.halfW;
+            }
+
+            if (this.y <= this.halfW){
+                //collided with boundary
+                this.y = this.halfW;
+            }
+            //back
+            if (this.x >= 1900 - this.halfW){
+                //collided with boundary
+                this.x= 1900 - this.halfW;
+            }
+        }
     }
 }

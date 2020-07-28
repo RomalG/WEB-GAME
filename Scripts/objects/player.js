@@ -25,9 +25,6 @@ var objects;
         Player.prototype.Start = function () {
             this.x = 820;
             this.y = 800;
-            //resizing spaceship
-            this.scaleX = 0.50;
-            this.scaleY = 0.50;
         };
         Player.prototype.Update = function () {
             this.Move();
@@ -40,7 +37,22 @@ var objects;
             this.y = objects.Game.stage.mouseY;
             //Keyboard controls
         };
-        Player.prototype.CheckBound = function () { };
+        Player.prototype.CheckBound = function () {
+            //sides
+            if (this.y >= 880 - this.halfW) {
+                //collided with boundary
+                this.y = 880 - this.halfW;
+            }
+            if (this.y <= this.halfW) {
+                //collided with boundary
+                this.y = this.halfW;
+            }
+            //back
+            if (this.x >= 1900 - this.halfW) {
+                //collided with boundary
+                this.x = 1900 - this.halfW;
+            }
+        };
         return Player;
     }(objects.GameObject));
     objects.Player = Player;
