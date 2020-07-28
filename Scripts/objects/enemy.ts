@@ -8,21 +8,23 @@ module objects{
         }
         //Methods
         public Start():void{ 
-            this.x=-50;
-            this.y=320;
+            this.Reset();
         }
         public Update():void{
             this.Move();
             this.CheckBound();
         }
         public Reset():void{
-            //empty...for now
+            this.y=Math.floor(Math.random() * 740) + 50;
+            this.x=Math.floor(Math.random() * 5) - 60;
         }
         public Move():void{
             this.x+=5;
         }
         public CheckBound():void{
-            //Empty.....for now
+            if(this.x>=1999){
+                this.Reset();
+            }
         }
     }
 }

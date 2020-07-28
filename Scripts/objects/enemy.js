@@ -24,21 +24,23 @@ var objects;
         }
         //Methods
         Enemy.prototype.Start = function () {
-            this.x = -50;
-            this.y = 320;
+            this.Reset();
         };
         Enemy.prototype.Update = function () {
             this.Move();
             this.CheckBound();
         };
         Enemy.prototype.Reset = function () {
-            //empty...for now
+            this.y = Math.floor(Math.random() * 740) + 50;
+            this.x = Math.floor(Math.random() * 5) - 60;
         };
         Enemy.prototype.Move = function () {
             this.x += 5;
         };
         Enemy.prototype.CheckBound = function () {
-            //Empty.....for now
+            if (this.x >= 1999) {
+                this.Reset();
+            }
         };
         return Enemy;
     }(objects.GameObject));
