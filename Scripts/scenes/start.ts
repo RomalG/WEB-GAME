@@ -4,6 +4,7 @@ module scenes{
         private background:objects.Background;
         private welcomeLabel:objects.label;
         private startButton:objects.Button;
+        private backgroundMusic: createjs.AbstractSoundInstance;
 
         //constructors
         constructor(assetManager:createjs.LoadQueue){
@@ -18,6 +19,10 @@ module scenes{
             this.welcomeLabel=new objects.label("The Burning Stars","60px","Consolas","#FFFFFF",950,240,true);
             //NOTE : PreloadJS manifest id 
             this.startButton=new objects.Button(this.assetManager,"nextButton",700,300);
+            //Instantiate sound
+            this.backgroundMusic = createjs.Sound.play("start_music");
+            this.backgroundMusic.loop = -1;
+            this.backgroundMusic.volume = 0.3;
             this.Main();
         }
 

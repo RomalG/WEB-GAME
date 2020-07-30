@@ -31,14 +31,21 @@ var scenes;
             for (var i = 0; i < this.enemyNum; i++) {
                 this.enemies[i] = new objects.Enemy(this.assetManager);
             }
+            //Instantiate Sound
+            createjs.Sound.stop();
+            this.backgroundMusic = createjs.Sound.play("play_music");
+            this.backgroundMusic.loop = -1;
+            this.backgroundMusic.volume = 0.3;
             this.Main();
         };
         PlayScene.prototype.Update = function () {
+            var _this = this;
             //this.background.Update();
             this.player.Update();
             //this.enemy.Update();
             this.enemies.forEach(function (e) {
                 e.Update();
+                managers.Collision.Check(_this.player, e);
             });
         };
         PlayScene.prototype.Main = function () {
