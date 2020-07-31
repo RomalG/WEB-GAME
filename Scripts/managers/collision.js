@@ -5,9 +5,9 @@ var managers;
         }
         Collision.Check = function (obj1, obj2) {
             //create a temp Vec2 object for each object passed in
-            var P1 = new math.Vec2(obj1.x, obj2.y);
+            var P1 = new math.Vec2(obj1.x, obj1.y);
             var P2 = new math.Vec2(obj2.x, obj2.y);
-            if (math.Vec2.Distance(P1, P2) < obj1.halfH + obj2.halfH) {
+            if (math.Vec2.Distance(P1, P2) < (obj1.halfH + obj2.halfH)) {
                 if (!obj2.isColliding) {
                     //react to collision
                     //check what i am colliding with

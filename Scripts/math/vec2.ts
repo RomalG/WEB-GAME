@@ -1,4 +1,4 @@
-module math{
+module math {
     export class Vec2 extends createjs.Point{
         //variable
         //constructor
