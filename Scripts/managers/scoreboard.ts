@@ -1,5 +1,5 @@
 module managers{
-    export class Scoreboard{
+    export class Scoreboard extends createjs.Container{
         //Variables
         public scoreLabel:objects.label;
         public highscorelabel:objects.label;
@@ -26,6 +26,7 @@ module managers{
 
         //constructor
         constructor(){
+            super();
             this.Init();
         }
         //methods 
@@ -36,6 +37,12 @@ module managers{
             //set a default score
             this.score=0;
             this.highScore=0;
+            this.Main();
         } 
+
+        private Main():void{
+            this.addChild(this.scoreLabel);
+            this.addChild(this.highscorelabel);
+        }
     }
 }
