@@ -40,7 +40,7 @@ module scenes{
 
         public startButtonClick():void{
             //change from Start to game scene
-            objects.Game.currentScene = config.Scene.GAME;
+            managers.Game.currentScene = config.Scene.GAME;
         }
     }
 }

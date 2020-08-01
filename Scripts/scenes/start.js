@@ -46,7 +46,7 @@ var scenes;
         };
         StartScene.prototype.startButtonClick = function () {
             //change from Start to game scene
-            objects.Game.currentScene = config.Scene.GAME;
+            managers.Game.currentScene = config.Scene.GAME;
         };
         return StartScene;
     }(objects.Scene));

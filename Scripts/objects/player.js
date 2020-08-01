@@ -45,11 +45,13 @@ var objects;
             {
                 this.x += 7.5;
             }*/
-            if (objects.Game.KeyboardManager.moveUp) {
+            if (managers.Game.KeyboardManager.moveUp) {
                 this.y -= 7.5;
             }
-            if (objects.Game.KeyboardManager.moveDown) {
+            if (managers.Game.KeyboardManager.moveDown) {
                 this.y += 7.5;
+            }
+            if (managers.Game.KeyboardManager.shoot) {
             }
         };
         Player.prototype.CheckBound = function () {

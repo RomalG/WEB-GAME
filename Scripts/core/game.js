@@ -35,17 +35,17 @@
         createjs.Ticker.framerate = 60;
         createjs.Ticker.on("tick", Update);
         //setup default game states -- State Machine
-        objects.Game.stage = stage;
-        objects.Game.currentScene = config.Scene.START;
+        managers.Game.stage = stage;
+        managers.Game.currentScene = config.Scene.START;
         currentState = config.Scene.START;
         keyboardManager = new managers.Keyboard;
-        objects.Game.KeyboardManager = keyboardManager;
+        managers.Game.KeyboardManager = keyboardManager;
         Main();
     }
     function Update() {
         //has the stage changed since last check
-        if (currentState != objects.Game.currentScene) {
-            console.log("changing scenes to" + objects.Game.currentScene);
+        if (currentState != managers.Game.currentScene) {
+            console.log("changing scenes to" + managers.Game.currentScene);
             Main();
         }
         currentScene.Update();
@@ -54,7 +54,7 @@
     function Main() {
         console.log("Game Starts...");
         //finite state machine
-        switch (objects.Game.currentScene) {
+        switch (managers.Game.currentScene) {
             case config.Scene.START:
                 stage.removeAllChildren();
                 currentScene = new scenes.StartScene(assetManager);
@@ -71,7 +71,7 @@
                 stage.addChild(currentScene);
                 break;
         }
-        currentState = objects.Game.currentScene;
+        currentState = managers.Game.currentScene;
     }
     window.onload = Init;
 })();

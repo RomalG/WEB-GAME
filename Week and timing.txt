@@ -1,5 +1,5 @@
-Week = week 10
-Timing = 00:61:40  // 00:69:19
+Week = week 10 ---- completed
+Timing = 00:00:00  // 00:00:00
 
 
 lite-server
