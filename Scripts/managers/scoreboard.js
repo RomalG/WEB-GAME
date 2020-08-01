@@ -31,7 +31,7 @@ var managers;
         Scoreboard.prototype.Init = function () {
             //Create our labels
             this.scoreLabel = new objects.label("Score:999999", "20px", "Consolas", "#FFFF00", 10, 10, false);
-            this.highscorelabel = new objects.label("Highscore : 0", "20px", "Consolas", "#FFFF00", 450, 10, false);
+            this.highscorelabel = new objects.label("Highscore : 0", "20px", "Consolas", "#FFFF00", 1680, 10, false);
             //set a default score
             this.score = 0;
             this.highScore = 0;
