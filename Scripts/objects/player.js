@@ -32,10 +32,24 @@ var objects;
         };
         Player.prototype.Reset = function () { };
         Player.prototype.Move = function () {
-            //Reference to the 'STAGE' createjs to get mouse position
-            this.x = objects.Game.stage.mouseX;
-            this.y = objects.Game.stage.mouseY;
-            //Keyboard controls
+            //----------------Reference to the 'STAGE' createjs to get mouse position--------------------
+            //this.x=objects.Game.stage.mouseX;
+            //this.y=objects.Game.stage.mouseY;
+            //------------Keyboard controls--------------------------------------------------------------
+            /*if(objects.Game.KeyboardManager.moveLeft)
+            {
+                this.x -= 7.5;
+            }
+            if(objects.Game.KeyboardManager.moveRight)
+            {
+                this.x += 7.5;
+            }*/
+            if (objects.Game.KeyboardManager.moveUp) {
+                this.y -= 7.5;
+            }
+            if (objects.Game.KeyboardManager.moveDown) {
+                this.y += 7.5;
+            }
         };
         Player.prototype.CheckBound = function () {
             //sides
