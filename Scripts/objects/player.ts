@@ -7,10 +7,11 @@ module objects{
             this.Start;
         }
         public Start():void{
-            this.x=820;
-            this.y=800;
+            this.x=1900;//320
+            this.y=880;//700
         }
         public Update():void{
+            this.x=1900;//------Start() nt wrking
             this.Move();
             this.CheckBound();
         }

@@ -23,10 +23,11 @@ var objects;
             return _this;
         }
         Player.prototype.Start = function () {
-            this.x = 820;
-            this.y = 800;
+            this.x = 1900; //320
+            this.y = 880; //700
         };
         Player.prototype.Update = function () {
+            this.x = 1900; //------Start() nt wrking
             this.Move();
             this.CheckBound();
         };
